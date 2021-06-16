@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO</title>
+</head>
+<body>
+    <input type="text" id="new_list_item">
+    <button onclick="additem()">add item</button>
+    <script>
+       var listitems = ['cricket','terminology'];
+    </script>
+    <script>
+        function additem(){
+            var tempitem = document.getElementById("new_list_item").value;
+            listitems.push(tempitem);
+            displaylist(tempitem);
+            document.getElementById("new_list_item").value='';
+            
+        }
+    </script>
+    <div id="displayitem">
+        <h1>your TODO</h1>
+        <script>
+            listitems.forEach(displaylist);
+            
+            function displaylist(item){
+                document.getElementById("displayitem").innerHTML += "<li>"+item+"</li>"
+                
+            }
+        </script>
+
+    </div>
+</body>
+</html>
